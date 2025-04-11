@@ -1,0 +1,195 @@
+{
+  "profile": {
+    "name": "WVG PRODUCCIONES",
+    "title": "PRODUCTOR ARTÍSTICO",
+    "description": "Somos una empresa especializada en la organización y producción de eventos artísticos, sociales y corporativos. Nuestra misión es brindar experiencias únicas y memorables para nuestros clientes y sus invitados.",
+    "image": "/assets/images/profile/logo.png",
+    "phone": "+593983003789",
+    "website": ""
+  },
+  "contact": [
+    {
+      "type": "phone",
+      "icon": "/assets/icons/call.png",
+      "text": "Llamar",
+      "action": "tel:+593983003789"
+    },
+    {
+      "type": "email",
+      "icon": "/assets/icons/email.png",
+      "text": "Email",
+      "action": "mailto:wvgproducciones@gmail.com"
+    },
+    {
+      "type": "location",
+      "icon": "/assets/icons/location.png",
+      "text": "Ubicación",
+      "address": "Quito, Ecuador",
+      "hours": "Lun-Vie 9am-6pm",
+      "googleMapsLink": "https://maps.app.goo.gl/QxeCYfPbpF13Qo3T9"
+    }
+  ],
+  "socialLinks": [
+    {
+      "type": "facebook",
+      "icon": "facebook.png",
+      "url": "https://www.facebook.com/share/1EnE3spwMh/?mibextid=wwXIfr",
+      "text": "Facebook"
+    },
+    {
+      "type": "instagram",
+      "icon": "instagram.jpg",
+      "url": "https://www.instagram.com/wvgproducciones?igsh=MXNoc2hqbGxqdGY0NA==",
+      "text": "Instagram"
+    },
+    {
+      "type": "tiktok",
+      "icon": "tiktok.png",
+      "url": "https://www.tiktok.com/@wvgproducciones?_t=ZM-8vJnixdkKaF&_r=1",
+      "text": "TikTok"
+    },
+    {
+      "type": "youtube",
+      "icon": "youtube.png",
+      "url": "https://www.youtube.com/@WVGPRODUCCIONES",
+      "text": "YouTube"
+    }
+  ],
+  "products": [
+    {
+      "title": "Alquiler de Pantallas Led",
+      "type": "image",
+      "image": "/assets/images/services/pantallas.png",
+      "description": [
+        "Pantallas LED de alta definición",
+        "Tamaños adaptables según el evento",
+        "Soporte técnico incluido",
+        "Instalación y desmontaje rápido",
+        "Calibración personalizada de brillo y color"
+      ],
+      "highlight": "Imágenes impactantes para cada ocasión"
+    },
+    {
+      "title": "Amplificación Profesional",
+      "type": "image",
+      "image": "/assets/images/services/amplificacion.png",
+      "description": [
+        "Sistemas de sonido de última generación",
+        "Cobertura de espacios grandes y pequeños",
+        "Monitoreo y mezcla en vivo",
+        "Micrófonos inalámbricos y de ambiente",
+        "Técnicos de sonido certificados"
+      ],
+      "highlight": "Sonido claro y potente en todo momento"
+    },
+    {
+      "title": "Iluminación Profesional",
+      "type": "image",
+      "image": "/assets/images/services/iluminacion.png",
+      "description": [
+        "Luces robóticas y arquitectónicas",
+        "Ambientes personalizados por tipo de evento",
+        "Programación DMX para shows sincronizados",
+        "Efectos de humo y láser disponibles",
+        "Operadores con experiencia en eventos masivos"
+      ],
+      "highlight": "Iluminamos tus eventos con estilo y creatividad"
+    },
+    {
+      "title": "Artistas Profesionales",
+      "type": "image",
+      "image": "/assets/images/services/artistas.png",
+      "description": [
+        "Contratación de artistas reconocidos",
+        "Shows en vivo con repertorio variado",
+        "Presentaciones personalizadas",
+        "Coordinación logística completa",
+        "Experiencia en eventos privados y corporativos"
+      ],
+      "highlight": "Talento y espectáculo para cada ocasión"
+    },
+    {
+      "title": "Representación de Orquesta con Secuencias",
+      "type": "image",
+      "image": "/assets/images/services/orquesta.png",
+      "description": [
+        "Sonido orquestal profesional con pistas secuenciadas",
+        "Repertorio amplio y adaptado al público",
+        "Formato compacto y versátil",
+        "Ideal para eventos sociales y empresariales",
+        "Artistas coordinados por managers de experiencia"
+      ],
+      "highlight": "La elegancia de una orquesta con practicidad técnica"
+    },
+    {
+      "title": "Manager de Grupos Musicales",
+      "type": "image",
+      "image": "/assets/images/services/managers.png",
+      "description": [
+        "Gestión y representación artística",
+        "Grupos como Contrastes y Chaumani",
+        "Negociación y logística de presentaciones",
+        "Acompañamiento en producción escénica",
+        "Asesoría en imagen y repertorio"
+      ],
+      "highlight": "Producción integral para talento emergente y profesional"
+    }
+  ],
+  "education": [
+    {
+      "title": "Por qué elegirnos",
+      "date": "Diferenciadores clave",
+      "details": [
+        "Experiencia demostrada en producción de eventos",
+        "Equipo técnico y humano altamente capacitado",
+        "Creatividad e innovación en cada proyecto",
+        "Atención personalizada antes, durante y después",
+        "Clientes satisfechos en todo el país"
+      ]
+    },
+    {
+      "title": "Calidad y Confianza",
+      "date": "Compromiso total",
+      "details": [
+        "Uso de equipos de alta gama y tecnología moderna",
+        "Cumplimiento puntual de cronogramas",
+        "Relaciones transparentes y éticas",
+        "Cuidado de cada detalle en la ejecución",
+        "Reputación construida con profesionalismo"
+      ]
+    },
+    {
+      "title": "Soluciones Integrales",
+      "date": "Todo en un solo lugar",
+      "details": [
+        "Desde la planificación hasta la ejecución",
+        "Amplio portafolio de servicios complementarios",
+        "Soporte técnico permanente",
+        "Adaptabilidad a cualquier tipo de evento",
+        "Propuesta única para cada cliente"
+      ]
+    }
+  ],
+  "slides": [
+    {
+      "image": "/assets/images/slides/slide1.jpg",
+      "title": "Eventos Artísticos de Alto Nivel"
+    },
+    {
+      "image": "/assets/images/slides/slide2.jpg",
+      "title": "Producción Escénica Profesional"
+    },
+    {
+      "image": "/assets/images/slides/slide3.jpg",
+      "title": "Equipos de Última Generación"
+    },
+    {
+      "image": "/assets/images/slides/slide4.jpg",
+      "title": "Shows en Vivo Impactantes"
+    },
+    {
+      "image": "/assets/images/slides/slide5.jpg",
+      "title": "Confianza y Calidad Garantizada"
+    }
+  ]
+}
