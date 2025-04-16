@@ -152,6 +152,7 @@ export default function TemplateCard() {
       <section className="bg-gradient-primary" id="services">
         <GalleryWithModal
           items={servicesItems}
+          whatsappNumber="593983003789" // 📞 número general
           titleOptions={{
             text: "Nuestros Servicios",
             color: "text-secondary",

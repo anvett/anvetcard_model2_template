@@ -11,6 +11,7 @@ export const servicesItems = [
       "Calibración personalizada de brillo y color"
     ],
     "highlight": "Imágenes impactantes para cada ocasión"
+    //"whatsappNumber": "593983003789",  ✅ número específico
   },
   {
     "title": "Amplificación Profesional",
@@ -24,6 +25,7 @@ export const servicesItems = [
       "Técnicos de sonido certificados"
     ],
     "highlight": "Sonido claro y potente en todo momento"
+    //"whatsappNumber": "593983003789",  ✅ número específico
   },
   {
     "title": "Iluminación Profesional",
@@ -37,6 +39,7 @@ export const servicesItems = [
       "Operadores con experiencia en eventos masivos"
     ],
     "highlight": "Iluminamos tus eventos con estilo y creatividad"
+    //"whatsappNumber": "593983003789",  ✅ número específico
   },
   {
     "title": "Artistas Profesionales",
@@ -50,6 +53,7 @@ export const servicesItems = [
       "Experiencia en eventos privados y corporativos"
     ],
     "highlight": "Talento y espectáculo para cada ocasión"
+    //"whatsappNumber": "593983003789",  ✅ número específico
   },
 
   {
@@ -66,5 +70,6 @@ export const servicesItems = [
       "Asesoría en imagen y repertorio"
     ],
     "highlight": "Producción integral para talento emergente y profesional"
+    //"whatsappNumber": "593983003789",  ✅ número específico
   }
 ];

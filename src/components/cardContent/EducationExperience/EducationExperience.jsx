@@ -131,7 +131,7 @@ const EducationExperience = ({
             >
               <ul className={`${useBulletPoints ? "list-disc" : "list-none"} pl-5`}>
                 {entry.details?.map((detail, i) => (
-                  <li key={i} className="py-spacing-1 sm:py-spacing-2">
+                  <li key={i} className="py-2 sm:py-3">
                     {detail}
                   </li>
                 ))}

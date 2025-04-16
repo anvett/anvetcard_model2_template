@@ -1,3 +1,5 @@
+
+
 // "use client";
 
 // import React, { useState, useEffect } from "react";
@@ -5,47 +7,50 @@
 // import Image from "next/image";
 
 // const GalleryWithModal = ({
-//   componentTitle = "", // Contenido del título general
-//   componentTitleColor = "text-black", // Color del título general
-//   componentTitleSize = "text-2xl sm:text-3xl", // Tamaño del título general
 //   items,
-//   componentBgColor = "bg-transparent",
-//   galleryItemBgColor = "bg-white",
-//   modalBgColor = "bg-white",
-//   titleTextColor = "text-primary",
-//   modalTitleTextColor = "text-secondary",
-//   titleSize = "text-lg sm:text-xl",
-//   modalTitleSize = "text-xl sm:text-2xl",
-//   descriptionTextColor = "text-gray-700",
-//   descriptionTextSize = "text-sm sm:text-base",
-//   highlightTextColor = "text-accent",
-//   highlightTextSize = "text-base sm:text-lg",
-//   modalButtonTextSize = "text-sm sm:text-base",
-//   aspectRatio = "16:9",
-//   whatsAppButtonText = "Contactar por WhatsApp",
-//   modalButtonType = "btn-outline",
-//   modalButtonBgColor = "bg-primary",
-//   modalButtonTextColor = "text-white",
-//   modalButtonBorderColor = "border border-gray-300",
-//   modalButtonHoverColor = "hover:bg-secondary",
-  
+//   titleOptions = {},
+//   galleryOptions = {},
+//   modalOptions = {},
+//   buttonOptions = {},
 // }) => {
 //   const [modalOpen, setModalOpen] = useState(false);
 //   const [selectedItem, setSelectedItem] = useState({});
 
-//   useEffect(() => {
-//     if (modalOpen) {
-//       document.body.classList.add("overflow-hidden");
-//     } else {
-//       document.body.classList.remove("overflow-hidden");
-//     }
-  
-//     // Limpieza en caso de que el componente se desmonte con modal abierto
-//     return () => {
-//       document.body.classList.remove("overflow-hidden");
-//     };
-//   }, [modalOpen]);
-  
+//   // 📦 Desestructuramos props agrupadas
+//   const {
+//     text: componentTitle = "",
+//     color: componentTitleColor = "text-black",
+//     size: componentTitleSize = "text-2xl sm:text-3xl",
+//     subtitle = "",
+//   } = titleOptions;
+
+//   const {
+//     bgColor: componentBgColor = "bg-transparent",
+//     itemBg: galleryItemBgColor = "bg-white",
+//     titleColor: titleTextColor = "text-primary",
+//     titleSize = "text-lg sm:text-xl",
+//   } = galleryOptions;
+
+//   const {
+//     bgColor: modalBgColor = "bg-white",
+//     titleColor: modalTitleTextColor = "text-secondary",
+//     titleSize: modalTitleSize = "text-xl sm:text-2xl",
+//     descriptionColor: descriptionTextColor = "text-gray-700",
+//     descriptionSize: descriptionTextSize = "text-sm sm:text-base",
+//     highlightColor: highlightTextColor = "text-accent",
+//     highlightSize: highlightTextSize = "text-base sm:text-lg",
+//     aspectRatio = "16:9",
+//   } = modalOptions;
+
+//   const {
+//     text: whatsAppButtonText = "Contactar por WhatsApp",
+//     type: modalButtonType = "btn-outline",
+//     size: modalButtonTextSize = "text-sm sm:text-base",
+//     bgColor: modalButtonBgColor = "bg-primary",
+//     textColor: modalButtonTextColor = "text-white",
+//     borderColor: modalButtonBorderColor = "border border-gray-300",
+//     hoverColor: modalButtonHoverColor = "hover:bg-secondary",
+//   } = buttonOptions;
 
 //   const openModal = (item) => {
 //     setSelectedItem(item);
@@ -56,7 +61,17 @@
 //     setModalOpen(false);
 //   };
 
-//   // Variantes de animación
+//   useEffect(() => {
+//     if (modalOpen) {
+//       document.body.classList.add("overflow-hidden");
+//     } else {
+//       document.body.classList.remove("overflow-hidden");
+//     }
+//     return () => {
+//       document.body.classList.remove("overflow-hidden");
+//     };
+//   }, [modalOpen]);
+
 //   const fadeIn = {
 //     hidden: { opacity: 0, y: 20 },
 //     visible: (i) => ({
@@ -73,19 +88,23 @@
 //   };
 
 //   return (
-
 //     <div className={`w-full container mx-auto p-4 py-spacing-3 ${componentBgColor}`}>
-//       {/* ✅ Título General del Componente */}
+//       {/* ✅ Título principal */}
 //       <h2 className={`text-center font-bold mb-spacing-2 ${componentTitleColor} ${componentTitleSize}`}>
 //         {componentTitle}
 //       </h2>
-//       <h4 className="text-center text-size-1 sm:text-size-2 text-dark font-semibold pb-spacing-3" >Haz clic en las imágenes para obtener más información </h4>
-      
-//       <div className="flex flex-wrap justify-center gap-spacing-1 sm:gap-spacing-5">
+//       {subtitle && (
+//         <h4 className="text-center text-size-1 sm:text-size-2 text-light font-semibold pb-spacing-3">
+//           {subtitle}
+//         </h4>
+//       )}
+
+//       {/* ✅ Galería */}
+//       <div className="flex flex-wrap justify-center gap-spacing-3 sm:gap-spacing-5">
 //         {items.map((item, index) => (
 //           <motion.div
 //             key={index}
-//             className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 mb-spacing-3 cursor-pointer ${galleryItemBgColor} shadow-lg rounded-lg`}
+//             className={`w-80 sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 mb-spacing-4 cursor-pointer ${galleryItemBgColor} shadow-lg rounded-lg`}
 //             onClick={() => openModal(item)}
 //             custom={index}
 //             initial="hidden"
@@ -93,20 +112,22 @@
 //             variants={fadeIn}
 //             whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
 //           >
+            
 //             <Image
 //               src={item.type === "video" ? item.thumbnail : item.image}
 //               alt={item.title}
-//               width={300}
-//               height={300}
+//               width={250}
+//               height={250}
 //               className="object-cover w-full h-full rounded-lg"
 //             />
-//             <h3 className={`${titleSize} ${titleTextColor} text-center font-semibold mt-3`}>
+//             <h3 className={`${titleSize} ${titleTextColor} text-center font-semibold mt-spacing-2 mb-spacing-3`}>
 //               {item.title}
 //             </h3>
 //           </motion.div>
 //         ))}
 //       </div>
 
+//       {/* ✅ Modal */}
 //       <AnimatePresence>
 //         {modalOpen && (
 //           <motion.div
@@ -116,9 +137,11 @@
 //             exit="exit"
 //             variants={modalAnimation}
 //           >
-//             <motion.div className={`relative mx-auto p-5 border w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 shadow-lg rounded-md max-h-[80vh] overflow-y-auto ${modalBgColor}`}>
+//             <motion.div
+//               className={`relative mx-auto p-5 border w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 shadow-lg rounded-md max-h-[80vh] overflow-y-auto ${modalBgColor}`}
+//             >
 //               <div className="mt-3 text-center flex flex-col">
-//                 {/* ✅ Ahora la imagen en el modal NO SE CORTA */}
+//                 {/* Imagen o video */}
 //                 {selectedItem.type === "video" ? (
 //                   <div className={`relative w-full aspect-${aspectRatio.replace(":", "-")} rounded-lg overflow-hidden`}>
 //                     <video controls className="w-full h-full object-contain">
@@ -138,25 +161,29 @@
 //                   </div>
 //                 )}
 
+//                 {/* Título */}
 //                 <h3 className={`${modalTitleTextColor} ${modalTitleSize} font-bold mt-3 py-spacing-2`}>
 //                   {selectedItem.title}
 //                 </h3>
 
+//                 {/* Descripción */}
 //                 <ul className={`list-disc list-outside text-left pl-5 pb-spacing-2 ${descriptionTextColor} ${descriptionTextSize} mt-2`}>
-//                   {selectedItem.description.map((desc, index) => (
+//                   {selectedItem.description?.map((desc, index) => (
 //                     <li className="py-1" key={index}>{desc}</li>
 //                   ))}
 //                 </ul>
 
+//                 {/* Frase destacada */}
 //                 <p className={`${highlightTextColor} ${highlightTextSize} font-semibold mt-2 pb-spacing-2`}>
 //                   {selectedItem.highlight}
 //                 </p>
 
+//                 {/* Botones */}
 //                 <div className="flex gap-4 pt-4 justify-center">
 //                   <a
 //                     target="_blank"
 //                     rel="noopener noreferrer"
-//                     href={`https://wa.me/+593992543979?text=Desearía%20saber%20más%20sobre%20${encodeURIComponent(
+//                     href={`https://wa.me/+593995571528?text=Desearía%20saber%20más%20sobre%20${encodeURIComponent(
 //                       selectedItem.title
 //                     )}`}
 //                     className={`${modalButtonType} ${modalButtonBgColor} ${modalButtonTextColor} ${modalButtonBorderColor} ${modalButtonHoverColor} ${modalButtonTextSize} px-4 py-2 font-semibold rounded-md`}
@@ -194,11 +221,11 @@ const GalleryWithModal = ({
   galleryOptions = {},
   modalOptions = {},
   buttonOptions = {},
+  whatsappNumber = "", // ✅ nuevo prop para número global
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState({});
 
-  // 📦 Desestructuramos props agrupadas
   const {
     text: componentTitle = "",
     color: componentTitleColor = "text-black",
@@ -271,7 +298,7 @@ const GalleryWithModal = ({
 
   return (
     <div className={`w-full container mx-auto p-4 py-spacing-3 ${componentBgColor}`}>
-      {/* ✅ Título principal */}
+      {/* Título */}
       <h2 className={`text-center font-bold mb-spacing-2 ${componentTitleColor} ${componentTitleSize}`}>
         {componentTitle}
       </h2>
@@ -281,12 +308,12 @@ const GalleryWithModal = ({
         </h4>
       )}
 
-      {/* ✅ Galería */}
+      {/* Galería */}
       <div className="flex flex-wrap justify-center gap-spacing-3 sm:gap-spacing-5">
         {items.map((item, index) => (
           <motion.div
             key={index}
-            className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 mb-spacing-4 cursor-pointer ${galleryItemBgColor} shadow-lg rounded-lg`}
+            className={`w-80 sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 mb-spacing-4 cursor-pointer ${galleryItemBgColor} shadow-lg rounded-lg`}
             onClick={() => openModal(item)}
             custom={index}
             initial="hidden"
@@ -294,7 +321,6 @@ const GalleryWithModal = ({
             variants={fadeIn}
             whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
           >
-            
             <Image
               src={item.type === "video" ? item.thumbnail : item.image}
               alt={item.title}
@@ -309,7 +335,7 @@ const GalleryWithModal = ({
         ))}
       </div>
 
-      {/* ✅ Modal */}
+      {/* Modal */}
       <AnimatePresence>
         {modalOpen && (
           <motion.div
@@ -323,7 +349,7 @@ const GalleryWithModal = ({
               className={`relative mx-auto p-5 border w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 shadow-lg rounded-md max-h-[80vh] overflow-y-auto ${modalBgColor}`}
             >
               <div className="mt-3 text-center flex flex-col">
-                {/* Imagen o video */}
+                {/* Media */}
                 {selectedItem.type === "video" ? (
                   <div className={`relative w-full aspect-${aspectRatio.replace(":", "-")} rounded-lg overflow-hidden`}>
                     <video controls className="w-full h-full object-contain">
@@ -365,7 +391,7 @@ const GalleryWithModal = ({
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={`https://wa.me/+593961400000?text=Desearía%20saber%20más%20sobre%20${encodeURIComponent(
+                    href={`https://wa.me/+${selectedItem.whatsappNumber || whatsappNumber}?text=Desearía%20saber%20más%20sobre%20${encodeURIComponent(
                       selectedItem.title
                     )}`}
                     className={`${modalButtonType} ${modalButtonBgColor} ${modalButtonTextColor} ${modalButtonBorderColor} ${modalButtonHoverColor} ${modalButtonTextSize} px-4 py-2 font-semibold rounded-md`}
