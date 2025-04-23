@@ -99,6 +99,7 @@ const BankInfo = ({
       </div>
 
       {/* ✅ Modal */}
+      {/* ✅ Modal */}
       <AnimatePresence>
         {selectedBank && (
           <motion.div
@@ -112,26 +113,43 @@ const BankInfo = ({
               <h3 className={`text-size-2 font-bold text-center ${modalTitleColor}`}>
                 {selectedBank.name}
               </h3>
-              <p className={`text-center pb-spacing-1 ${modalTextColor}`}>
-                {selectedBank.instructions}
-              </p>
-              <p className={`text-center pb-spacing-2 ${modalTextColor}`}>
-                Haz clic en el botón para copiar el dato y pégalo en tu app bancaria.
-              </p>
 
-              {selectedBank.details.map((detail, idx) => (
-                <div key={idx} className="flex justify-between items-center my-2">
-                  <span className={`text-size-1 ${modalTextColor}`}>
-                    {detail.label}: <strong>{detail.value}</strong>
-                  </span>
-                  <button
-                    className={`transition-all ${buttonType} ${buttonBgColor} ${buttonTextColor} ${buttonBorderColor} ${buttonHoverColor} px-4 py-2 rounded-md`}
-                    onClick={() => copyToClipboard(detail.value)}
-                  >
-                    {copyButtonText}
-                  </button>
-                </div>
-              ))}
+              {selectedBank.name === "Tarjetas de Crédito" ? (
+                <>
+                  <p className={`text-center pb-spacing-2 ${modalTextColor}`}>
+                    Aceptamos todas las tarjetas de crédito y débito: Visa, Mastercard, American Express y más.
+                  </p>
+                  <div className="flex justify-center gap-4">
+                    <Image src="/assets/icons/visa.jpg" alt="Visa" width={50} height={30} />
+                    <Image src="/assets/icons/mastercard.png" alt="Mastercard" width={50} height={30} />
+                    <Image src="/assets/icons/american.png" alt="Amex" width={50} height={30} />
+                    <Image src="/assets/icons/diners.png" alt="Diners Club" width={50} height={30} />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <p className={`text-center pb-spacing-1 ${modalTextColor}`}>
+                    {selectedBank.instructions}
+                  </p>
+                  <p className={`text-center pb-spacing-2 ${modalTextColor}`}>
+                    Haz clic en el botón para copiar el dato y pégalo en tu app bancaria.
+                  </p>
+
+                  {selectedBank.details.map((detail, idx) => (
+                    <div key={idx} className="flex justify-between items-center my-2">
+                      <span className={`text-size-1 ${modalTextColor}`}>
+                        {detail.label}: <strong>{detail.value}</strong>
+                      </span>
+                      <button
+                        className={`transition-all ${buttonType} ${buttonBgColor} ${buttonTextColor} ${buttonBorderColor} ${buttonHoverColor} px-4 py-2 rounded-md`}
+                        onClick={() => copyToClipboard(detail.value)}
+                      >
+                        {copyButtonText}
+                      </button>
+                    </div>
+                  ))}
+                </>
+              )}
 
               <div className="modal-action">
                 <button
